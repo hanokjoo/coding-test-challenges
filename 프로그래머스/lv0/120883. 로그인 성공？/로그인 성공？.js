@@ -6,4 +6,10 @@ function solution(id_pw, db) {
         }
     }
     return "fail";
+    
+    /* map 활용
+    const [id, pw] = id_pw;
+    const map = new Map(db);
+    return map.has(id) ? (map.get(id) === pw ? 'login' : 'wrong pw') : 'fail';
+    */
 }
