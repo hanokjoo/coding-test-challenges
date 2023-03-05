@@ -10,4 +10,8 @@ function solution(spell, dic) {
     });
     
     return (count > 0) ? 1 : 2;
+    
+    /* 참고할 만한 코드 - some() 사용
+    return d.some(s => p.sort().toString() == [...s].sort().toString()) ? 1 : 2;
+    */
 }
