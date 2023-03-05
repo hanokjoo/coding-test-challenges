@@ -18,4 +18,16 @@ function solution(lines) {
     }
     
     return range.filter((e) => e.length > 1).length;
+    
+    /* 참고할 만한 코드
+    let line = new Array(200).fill(0); // 라인 범위의 line 배열을 0으로 채움
+    lines.forEach(([a, b]) => {
+      for(; a < b; a++) {
+        // lines 배열에 line이 있는 원소에 1씩 추가
+        line[a+100]++;
+      }
+    });
+    // 배열을 돌며 1보다 큰(겹쳐진) 라인이 몇개인지 a에 누적 시킴
+    return line.reduce((a, c) =>  c > 1 ? a + 1 : a, 0)
+    */
 }
