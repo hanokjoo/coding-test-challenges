@@ -10,4 +10,12 @@ function solution(n) {
         return e;
     });
     return temp.pop();
+    
+    
+    /* 참고할 만한 코드
+    let arr = [];
+    let num = 0;
+    while (arr.length !== n && ++num) if (num%3!==0 && !(''+num).includes('3')) arr.push(num);
+    return arr.pop();
+    */
 }
