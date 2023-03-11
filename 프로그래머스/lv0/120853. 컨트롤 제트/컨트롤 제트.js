@@ -11,4 +11,15 @@ function solution(s) {
         }
     });
     return answer;
+    
+    /* 참고할 만한 코드 - stack처럼 풀이
+    const stack = []
+
+    s.split(' ').forEach((target) => {
+        if(target === 'Z') stack.pop();
+        else stack.push(+target)
+    });
+
+    return stack.length ? stack.reduce((pre, cur) => pre + cur) : 0;
+    */
 }
