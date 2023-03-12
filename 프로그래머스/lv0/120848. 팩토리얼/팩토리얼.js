@@ -7,4 +7,11 @@ function solution(n) {
         if (factVal === n) return i;
         else if (factVal > n) return i - 1;
     }
+    
+    /* 참고할 만한 코드
+    let i = 1;
+    let f = 1;
+    while (f*i < n) f*=++i;
+    return i;
+    */
 }
