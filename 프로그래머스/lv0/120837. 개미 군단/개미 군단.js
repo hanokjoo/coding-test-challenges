@@ -12,4 +12,8 @@ function solution(hp) {
         answer += remain;
     }
     return answer;
+    
+    /* 참고할 만한 코드
+    return Math.floor(hp / 5) + Math.floor((hp % 5) / 3)+(hp % 5) % 3;
+    */
 }
