@@ -16,4 +16,10 @@ rl.on('line', function (line) {
         }
         console.log(answer);
     }
+    
+    /* 참고할 만한 코드 - repeat() 사용
+    for (let i = 1; i <= +input[0]; i++) {
+        console.log('*'.repeat(i));
+    }
+    */
 });
