@@ -14,3 +14,16 @@ function isPrime(n) {
     }
     return true;
 }
+
+/* 참고할 만한 코드 - 약수의 갯수로 체크
+return Array(n)
+    .fill()
+    .map((_, i) => i + 1)
+    .filter((i) => {
+      let cnt = 0;
+      for (let j = 1; j <= i; j++) {
+        if (i % j === 0) cnt++;
+      }
+      return cnt >= 3;
+    }).length;
+*/
