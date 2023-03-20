@@ -11,4 +11,8 @@ function solution(letter) {
         if (e !== " ") answer += morse[e];
     });
     return answer;
+    
+    /* 참고할 만한 코드
+    return letter.split(' ').reduce((prev, curr) => prev + morse[curr], '');
+    */
 }
