@@ -38,53 +38,17 @@ function solution(board) {
     });
     return answer;
     
-    /*
-    if(board.length === 1) {
-        return (board[0][0] === 1) ? 0 : 1;
-    }
-    
-    let foundArr = [];
-    board.forEach((row, rowIdx) => {
-        row.forEach((e, idx) => {
-            if (e === 1) {
-                foundArr.push([rowIdx, idx]);
-            }
+    /* 참고할 만한 코드
+    let outside = [[-1,0], [-1,-1], [-1,1], [0,-1],[0,1],[1,0], [1,-1], [1,1]];
+    let safezone = 0;
+
+    board.forEach((row, y, self) => row.forEach((it, x) => {
+        if (it === 1) return false;
+        return outside.some(([oy, ox]) => {
+            console.log(oy, ox);
+            !!self[oy + y]?.[ox + x] ? false : safezone++;
         });
-    }); 
-    if (foundArr.length === 0) return Math.pow(board.length, 2);
+    }));
     
-    for (let found of foundArr) {
-        if (found[0] > 0 && found[1] > 0) {
-            for (let i = found[0] - 1; i <= found[0] + 1; i++) {
-                if (i >= board.length) break;
-                for (let j = found[1] - 1; j <= found[1] + 1; j++) {
-                    if (j >= board[i].length) break;
-                    board[i][j] += 1;    
-                }
-            }
-        } else if (found[0] === 0) {
-            for (let j = found[1] - 1; j <= found[1] + 1; j++) {
-                if (j >= board[0].length || j < 0) continue;
-                board[0][j] += 1;
-                board[1][j] += 1;
-            }
-        } else if (found[1] === 0) {
-            for (let i = found[0] - 1; i <= found[0] + 1; i++) {
-                if (i >= board.length || i < 0) continue;
-                board[i][1] += 1;    
-            }
-        }
-        
-    }
-    
-    let answer = 0;
-    board.forEach((row) => {
-        row.forEach((e) => {
-            if(e === 0) answer++;
-        }); 
-    });
-    return answer;
     */
-    
-    //return 0;
 }
