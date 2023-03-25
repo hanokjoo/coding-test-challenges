@@ -6,4 +6,8 @@ function solution(x, n) {
     }
     
     return answer;
+    
+    /* 참고할 만한 코드 - array, map() 활용
+    return Array(n).fill(x).map((v, i) => (i + 1) * v);
+    */
 }
