@@ -7,4 +7,8 @@ function solution(a, b) {
         answer += i;
     }
     return answer;
+    
+    /* 참고할 만한 코드 - 가우스 공식 적용
+    return (a + b) * (Math.abs(b - a) + 1) / 2; 
+    */
 }
