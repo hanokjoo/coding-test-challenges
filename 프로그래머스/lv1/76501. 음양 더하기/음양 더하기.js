@@ -4,4 +4,8 @@ function solution(absolutes, signs) {
         answer += (signs[idx]) ? e : e * -1;
     });
     return answer;
+    
+    /* 참고할 만한 코드 - reduce() 사용
+    return absolutes.reduce((acc, val, i) => acc + (val * (signs[i] ? 1 : -1)), 0);
+    */
 }
