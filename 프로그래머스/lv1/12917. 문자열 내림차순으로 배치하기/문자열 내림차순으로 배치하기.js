@@ -5,4 +5,10 @@ function solution(s) {
         .sort((a, b) => b - a)
         .map((ch) => String.fromCodePoint(ch))
         .join("");
+    
+    /* 참고할 만한 코드
+    return s.split("").sort().reverse().join("");
+    
+    문자열을 그냥 정렬하면 Z가 제일 앞으로 오니까 reverse() 해준다.
+    */
 }
