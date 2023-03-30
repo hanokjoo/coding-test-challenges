@@ -9,4 +9,8 @@ process.stdin.on('data', data => {
         }
         console.log(str);
     }
+    
+    /* 참고할 만한 코드 - repeat() 사용
+    console.log((('*').repeat(a) + `\n`).repeat(b));
+    */
 });
