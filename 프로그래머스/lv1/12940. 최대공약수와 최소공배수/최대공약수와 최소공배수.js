@@ -24,4 +24,10 @@ function solution(n, m) {
     -> 나머지가 0이 될 때까지 나누면 그 수가 최대공약수.
     -> a * b / 최대공약수 = 최소공배수
     */
+    
+    /* 참고할 만한 코드 - for()문 활용
+    var r;
+    for (var ab = a * b; r = a % b; a = b, b = r) {}
+    return [b, ab / b];
+    */
 }
