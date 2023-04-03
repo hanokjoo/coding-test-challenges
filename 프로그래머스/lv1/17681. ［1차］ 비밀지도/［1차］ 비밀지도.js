@@ -8,4 +8,10 @@ function solution(n, arr1, arr2) {
     }
     
     return answer;
+    
+    /* 참고할 만한 코드 - 정규식에 |(or)
+    return arr1.map((v, i) => arr2[i].padStart(n, 0)
+                    .toString(2))
+                    .replace(/1|0/g, a => +a ? '#' : ' '));
+    */
 }
