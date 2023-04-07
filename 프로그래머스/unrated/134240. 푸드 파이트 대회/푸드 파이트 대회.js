@@ -6,6 +6,7 @@ function solution(food) {
         }
     }
     return half.join("") + "0" + half.reverse().join(""); 
+    // 배열 대신 String으로 처리해도 될 듯
     
     /* 참고할 만한 코드
     - 직관적임
