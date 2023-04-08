@@ -7,4 +7,10 @@ function solution(a, b) {
     }
     
     return (b % 7 === 0) ? days[6] : days[b % 7 - 1];
+    
+    /* 참고할 만한 코드 - Date 객체 사용
+    const arr = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+    return arr[new Date(`2016-${a}-${b}`).getDay()];
+    */
 }
+
