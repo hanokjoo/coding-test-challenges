@@ -15,16 +15,15 @@ function solution(n, m, section) {
     
     return answer;
     
-//     for (let i = 0; i < n / m; i++) {
-//         if (!wall.slice(i , i + m).every(e => e > 0)) {
-//             wall.fill(1, i, i + m);
-//             answer++;
-//         }
-//     }
-    
-//     if (!wall.slice(Math.floor(n / m)).every(e => e > 0)) {
-//         answer++;
-//     }
-    
-//     return answer;
+    /* 참고할 만한 코드
+    let answer = 0;
+    let painted = 0;
+    for(let section of sections) {
+        if(painted < section) {
+            answer++;
+            painted = section + m - 1;
+        }
+    }
+    return answer;
+    */
 }
