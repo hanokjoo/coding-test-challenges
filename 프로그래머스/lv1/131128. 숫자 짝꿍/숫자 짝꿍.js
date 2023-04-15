@@ -17,23 +17,25 @@ function solution(X, Y) {
     if (pair.every(e => e === 0)) return "0";
     return pair.sort((a, b) => b - a).join("");
     
-    /*
-    let small = (X.length <= Y.length) ? [...X] : [...Y];
-    let big = (X.length > Y.length) ? [...X] : [...Y];
-    small.sort((a, b) => b - a);
-    big.sort((a, b) => b - a);
-    
-    const partner =[];
-    let index = -1;
-    for (let s of small) {
-        index = big.findIndex(e => e === s);
-        if (index >= 0) {
-            partner.push(s);
-            big = big.slice(index + 1);
-        }
+    /* 참고할 만한 코드 - X 순회 후 Y 순회하면서 X와 겹치는지 같이 확인한다.
+    let result = '';
+    const numObj = {};
+
+    for (const char of X) {
+        numObj[char] = (numObj[char] || 0) + 1;
     }
-    if (partner.length === 0) return "-1";
-    if (partner.every(e => e === "0")) return "0";
-    return partner.join("");
+
+    for (const char of Y) {
+        if (!numObj[char]) continue;
+        result += char;
+        numObj[char]--;
+    }
+
+    if (result === '') return '-1';
+    if (+result === 0) return '0';
+    return [...result]
+        .map((num) => +num)
+        .sort((a, b) => b - a)
+        .join('');    
     */
 }
