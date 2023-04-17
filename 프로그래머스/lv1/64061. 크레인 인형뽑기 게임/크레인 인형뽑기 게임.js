@@ -1,10 +1,20 @@
+/* 2차원 배열 선언 시 주의
+    -> fill() 방식: new Array() 한 객체의 주소 값이 reorder의 모든 행에 적용되어 
+        아래 코드에서 reorder[j].unshift(e)를 하면 모든 행에 e가 들어간다.
+        ex) [[1], [1], [1], [1], [1]]
+    -> from() 방식: reorder의 각 행이 각자 다른 배열로 선언되어 unshift(e) 동작 잘된다.
+        ex) [[], [], [1], [], []]
+*/
+
 function solution(board, moves) {
-    const reorder = new Array(board[0].length).fill(new Array());
+    //const reorder = new Array(board[0].length).fill(new Array());
+    const reorder = Array.from(Array(board[0].length), () => new Array());
     
     board.forEach((row, i) => {
         row.forEach((e, j) => {
             if (e > 0) {
-                reorder[j] = [e].concat(reorder[j]);
+                //reorder[j] = [e].concat(reorder[j]);
+                reorder[j].unshift(e);
             }
         });
     });
