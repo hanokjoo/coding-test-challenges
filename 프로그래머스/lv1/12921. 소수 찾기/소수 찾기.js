@@ -31,5 +31,15 @@ function solution(n) {
     - 일련의 정수들을 배열에 넣으려면
     let arr = [...Array(5).keys()]; 
     -> [0, 1, 2, 3, 4]
+    
+    - 위 방법을 사용한 풀이
+    let s = [...Array(n).keys()];
+    s[0] = 0;
+    for (let i = 2; i <= parseInt(n**.5) + 1; i++) {
+        for (let j = 2; j <= (n - i) / i + 1; j++) {
+            s[i * j - 1] = 0;
+        }
+    }
+    return s.filter(x => Boolean(x)).length;
     */
 }
