@@ -27,5 +27,9 @@ function solution(n) {
         }
     }
     return s.size;
+    
+    - 일련의 정수들을 배열에 넣으려면
+    let arr = [...Array(5).keys()]; 
+    -> [0, 1, 2, 3, 4]
     */
 }
