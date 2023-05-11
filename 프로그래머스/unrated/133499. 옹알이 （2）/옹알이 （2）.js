@@ -13,12 +13,19 @@ function solution(babbling) {
     
     /* 참고할 만한 코드
     1. 정규식 활용해서 간결하게
+    1_1.
     const regexp1 = /(aya|ye|woo|ma)\1+/;
     const regexp2 = /^(aya|ye|woo|ma)+$/;
 
     return babbling.reduce((ans, word) => (
         !regexp1.test(word) && regexp2.test(word) ? ++ans : ans
     ), 0);
+    
+    1_2.
+    let reg = new RegExp("^(aya(?!(aya))|ye(?!(ye))|woo(?!(woo))|ma(?!(ma)))+$");
+    return babbling.reduce((acc, cur) => {
+        return reg.test(cur) ? acc + 1 : acc;
+    }, 0);
     
     2. 정규식 없이 repeat() 활용해서
     const babblables = ["aya", "ye", "woo", "ma"];
