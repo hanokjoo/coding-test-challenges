@@ -9,6 +9,15 @@ function solution(babbling) {
         } 
         return word;        
     });
-    console.log(filteredBabbling);   
     return filteredBabbling.filter(word => word.replaceAll("_", "") === "").length;
+    
+    /* 참고할 만한 코드
+    1. 정규식 활용해서 간결하게
+    const regexp1 = /(aya|ye|woo|ma)\1+/;
+    const regexp2 = /^(aya|ye|woo|ma)+$/;
+
+    return babbling.reduce((ans, word) => (
+        !regexp1.test(word) && regexp2.test(word) ? ++ans : ans
+    ), 0);
+    */
 }
