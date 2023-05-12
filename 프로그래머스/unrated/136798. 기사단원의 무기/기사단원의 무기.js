@@ -1,13 +1,13 @@
 function solution(number, limit, power) {
-    const commonDivCount = new Array(number);
+    let answer = 0;
     let getCount = 0;
     for (let i = 1; i <= number; i++) {
         getCount = getDivCount(i);
-        if (getCount > limit) commonDivCount[i - 1] = power;
-        else commonDivCount[i - 1] = getCount;
+        if (getCount > limit) answer += power;
+        else answer += getCount;
     }
     
-    return commonDivCount.reduce((a, c) => a + c);
+    return answer;
 }
 
 function getDivCount(num) {
