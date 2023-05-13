@@ -20,12 +20,10 @@ function solution(survey, choices) {
             type = survey[i][1];
         }
         scores.set(type, scores.get(type) + point[choices[i] - 1]);
-        //console.log("type: ", type, scores.get(type));
     }
     
     let answer = "";
     indicators.forEach(e => {
-        //console.log(e[0], scores.get(e[0]), e[1], scores.get(e[1]));
         if (scores.get(e[0]) > scores.get(e[1])) {
             answer += e[0];
         } else if (scores.get(e[0]) < scores.get(e[1])) {
@@ -36,4 +34,22 @@ function solution(survey, choices) {
     });
     
     return answer;
+    
+    /* 참고할 만한 코드
+    1. 구조분해할당으로 survey 지표 나눔, 절대값으로 점수 구하기
+    const MBTI = {};
+    const types = ["RT","CF","JM","AN"];
+
+    types.forEach((type) =>
+        type.split('').forEach((char) => MBTI[char] = 0)
+    )
+
+    choices.forEach((choice, index) => {
+        const [disagree, agree] = survey[index];
+
+        MBTI[choice > 4 ? agree : disagree] += Math.abs(choice - 4);
+    });
+
+    return types.map(([a, b]) => MBTI[b] > MBTI[a] ? b : a).join("");
+    */
 }
