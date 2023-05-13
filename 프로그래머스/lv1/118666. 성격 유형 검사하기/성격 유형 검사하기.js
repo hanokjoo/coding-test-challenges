@@ -35,8 +35,7 @@ function solution(survey, choices) {
     
     return answer;
     
-    /* 참고할 만한 코드
-    1. 구조분해할당으로 survey 지표 나눔, 절대값으로 점수 구하기
+    /* 참고할 만한 코드 - 구조분해할당으로 survey 지표 나눔, 절대값으로 점수 구하기
     const MBTI = {};
     const types = ["RT","CF","JM","AN"];
 
