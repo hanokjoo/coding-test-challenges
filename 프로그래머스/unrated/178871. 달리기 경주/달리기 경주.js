@@ -1,13 +1,4 @@
-function solution(players, callings) {
-    /*let index = -1;
-    for (let call of callings) {
-        index = players.indexOf(call);
-        [players[index - 1], players[index]] = [players[index], players[index - 1]];
-        //console.log(call, players);
-    }
-    return players;
-    */
-    
+function solution(players, callings) {  
     let playersMap = new Map();
     let rankMap = new Map();
     players.forEach((e, idx) => {
@@ -32,4 +23,18 @@ function solution(players, callings) {
         answer[v - 1] = k;
     });
     return answer;
+    
+    /* 참고할 만한 코드 - Object 활용해서 풀이
+    let obj = {};
+    players.forEach((v, idx) => obj[v] = idx);
+    for (let i = 0; i < callings.length; i++) {
+        let idx = obj[callings[i]];
+        let player = players[idx - 1];
+        players[idx - 1] = callings[i];
+        players[idx] = player;
+        obj[callings[i]]--;
+        obj[player]++;
+    }
+    return Object.entries(players).map((v) => v[1]);
+    */
 }
