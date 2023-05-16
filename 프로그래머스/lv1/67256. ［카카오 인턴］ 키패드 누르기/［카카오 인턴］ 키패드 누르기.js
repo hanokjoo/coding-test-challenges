@@ -45,4 +45,44 @@ function solution(numbers, hand) {
     });
     
     return answer.join("");
+    
+    /* 참고할 만한 코드 
+    - #, *의 위치를 [1, 1]로 두고 각 숫자를 #, * 기준으로 떨어진만큼으로 설정함.
+        1: [4, 1]
+        2: [4, 1]
+        3: [4, 1]
+        4: [3, 1]
+        5: [3, 1]
+        6: [3, 1]
+        7: [2, 1]
+        8: [2, 1]
+        9: [2, 1]
+    2, 5, 8, 0은 어느손이던 좌우로 1칸씩만 차이나므로 전부 1로 설정.
+
+    hand = hand[0] === "r" ? "R" : "L";
+    let position = [1, 4, 4, 4, 3, 3, 3, 2, 2, 2];
+    let h = { L: [1, 1], R: [1, 1] };
+    return numbers.map(x => {
+        if (/[147]/.test(x)) {
+            h.L = [position[x], 1];
+            return "L";
+        }
+        if (/[369]/.test(x)) {
+            h.R = [position[x], 1];
+            return "R";
+        }
+        let distL = Math.abs(position[x] - h.L[0]) + h.L[1];
+        let distR = Math.abs(position[x] - h.R[0]) + h.R[1];
+        if (distL === distR) {
+            h[hand] = [position[x], 0];
+            return hand;
+        }
+        if (distL < distR) {
+            h.L = [position[x], 0];
+            return "L";
+        }
+        h.R = [position[x], 0];
+        return "R";
+    }).join("");
+    */
 }
