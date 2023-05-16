@@ -10,6 +10,25 @@ function solution(wallpaper) {
            } 
         });
     });
-    console.log("->", lux, luy, rdx, rdy);
+    
     return [luy, lux, rdy + 1, rdx + 1];
+    
+    
+    /* 참고할 만한 코드
+    1. 첫 좌표 설정을 이렇게 해도 된다.
+    let [x1, y1, x2, y2] = [wallpaper.length, wallpaper[0].length, 0, 0];
+    // x1 => min i
+    // x2 => max i
+    // y1 => min idx
+    // y2 => max idx
+    wallpaper.forEach((paper, i) => {
+        if (paper.includes('#')) {
+            x1 = Math.min(x1, i);
+            y1 = Math.min(y1, paper.indexOf('#'));
+            x2 = Math.max(x2, i);
+            y2 = Math.max(y2, paper.lastIndexOf('#'));
+        }
+    });
+    return [x1, y1, x2 + 1, y2 + 1];
+    */
 }
