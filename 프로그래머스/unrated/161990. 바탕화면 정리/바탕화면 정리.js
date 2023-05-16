@@ -30,5 +30,19 @@ function solution(wallpaper) {
         }
     });
     return [x1, y1, x2 + 1, y2 + 1];
+    
+    2. 파일의 모든 좌표를 구해서 최소, 최대값으로 구한다.
+    let left = [], top = [], right = [], bottom = [];
+    wallpaper.forEach((v,i) => {
+        [...v].forEach((val,ind) => {
+            if(val === "#") {
+                left.push(i);
+                top.push(ind);
+                right.push(i + 1);
+                bottom.push(ind + 1);
+            }
+        });
+    });
+    return [Math.min(...left), Math.min(...top), Math.max(...right), Math.max(...bottom)];
     */
 }
