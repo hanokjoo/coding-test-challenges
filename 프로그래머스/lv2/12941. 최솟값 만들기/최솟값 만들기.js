@@ -8,4 +8,8 @@ function solution(A,B){
     }
     
     return answer;
+    
+    /* 참고할 만한 코드 - answer 대신 reduce() 사용할 수 있다.
+    return A.reduce((total, val, idx) => total + val * B[idx], 0);
+    */
 }
