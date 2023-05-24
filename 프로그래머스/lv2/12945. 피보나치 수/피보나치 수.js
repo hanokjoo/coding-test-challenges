@@ -9,4 +9,13 @@ function solution(n) {
         //console.log(a, b);
     }
     return b;
+    
+    /* 참고할 만한 코드 - 나머지들을 배열에 넣어서 풀이
+    let result = [0 , 1];
+    while ( result.length !== n + 1) {
+        var fibonacci = (result[result.length - 2] + result[result.length - 1]) % 1234567;
+        result.push(fibonacci);
+    }
+    return result[n];
+    */
 }
