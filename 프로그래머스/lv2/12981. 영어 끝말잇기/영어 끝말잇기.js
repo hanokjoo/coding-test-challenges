@@ -26,4 +26,14 @@ function solution(n, words) {
     }
 
     return [0, 0];
+    
+    /* 참고할 만한 코드 - reduce() 활용해서 풀이
+    let answer = 0;
+    words.reduce((prev, now, idx) => {
+        answer = answer || ((words.slice(0, idx).indexOf(now) !== -1 || prev !== now[0]) ? idx : answer);   // 중복단어거나 끝말을 잇지 않은 경우 idx 저장
+        return now[now.length-1];   // prev에 이전단어의 마지막 글자 저장
+    }, "")
+
+    return answer ? [answer%n+1, Math.floor(answer/n)+1] : [0,0];
+    */
 }
