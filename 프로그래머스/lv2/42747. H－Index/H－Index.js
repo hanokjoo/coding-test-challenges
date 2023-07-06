@@ -13,16 +13,22 @@ function solution(citations) {
         arr[k] = v;
     }
     arr.reverse();
-    //console.log(arr);
+    
     let sum = 0, idx = 0;;
     for (let i = 0; i < arr.length; i++) {
-        //if (arr[i] !== 0) {
-            sum += arr[i];
-            idx = arr.length - i - 1;
-            //console.log(sum, idx);
-            if (sum >= idx) return idx;
-        //}
+        sum += arr[i];
+        idx = arr.length - i - 1;
+        if (sum >= idx) return idx;
     }
     
     return 0;
+    
+    /* 참고할 만한 코드 - 내림차순 정렬해서 논문 갯수와 인용횟수 비교
+    citations = citations.sort((a, b) => b - a);
+    var i = 0;
+    while(i + 1 <= citations[i]) {
+        i++;
+    }
+    return i;
+    */
 }
