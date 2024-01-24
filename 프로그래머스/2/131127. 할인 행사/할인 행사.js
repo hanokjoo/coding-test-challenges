@@ -17,4 +17,6 @@ function solution(want, number, discount) {
     }
     
     return answer;
+    
+    /* 소요시간: 28분 */
 }
