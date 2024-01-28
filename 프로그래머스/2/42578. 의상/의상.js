@@ -50,4 +50,4 @@ function getCombinations(arr, num) {
     return results;
 }
 
-// start(2: 45) ~ done(4:20)
+// start(2: 45) ~ done(4:50)
