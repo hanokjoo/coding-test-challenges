@@ -12,25 +12,4 @@ function solution(n) {
     }
     
     return answer;
-    
-    
-    
-    
-    
-    
-    // let moveSet = new Set(getMove(n, "", []));
-    // return moveSet.size;
-}
-
-function getMove(remain, move, moves) {
-    if (remain > 1) {
-        getMove(remain - 2, move + "2", moves);
-        getMove(remain - 1, move + "1", moves);
-    } else if (remain === 1) {
-        getMove(remain - 1, move + "1", moves);
-    } else {
-        moves.push(move);
-    }
-    console.log(moves);
-    return moves;
 }
