@@ -75,5 +75,7 @@ function doSliceAndPress(arr, sliceIndex) {
     }, []);
 }
 
-// day1: start(21:50) ~ end(23:34) 
-// day2: start(16:30) ~
+/*
+day1: start(21:50) ~ end(23:34) 
+day2: start(16:30) ~ end(17:40)
+*/
