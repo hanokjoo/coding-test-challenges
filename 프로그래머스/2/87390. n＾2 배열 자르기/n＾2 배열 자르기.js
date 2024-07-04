@@ -1,40 +1,10 @@
-function solution(n, left, right) {
-    
+function solution(n, left, right) { 
     let leftQuo = parseInt(left / n) + 1;
     let leftRemain = parseInt(left % n);
     let rightQuo = parseInt(right / n) + 1;
     let rightRemain = parseInt(right % n);
-    //console.log(leftQuo, leftRemain, rightQuo, rightRemain);
     
     let answer = [];
-    /*
-    for (let i = leftQuo; i <= rightQuo; i++) {
-        if (i === leftQuo) {
-            for (let j = leftRemain; j < n; j++) {
-                if (j >= i) answer.push(j + 1);
-                else answer.push(i + 1);
-            }
-        }
-        else if (i === rightQuo) {
-            for (let j = 0; j <= rightRemain; j++) {
-                if (j <= i) answer.push(i + 1);
-                else answer.push(j + 1);
-            }
-        }
-        else {
-            for (let j = 0; j < n; j++) {
-                if (j < i) answer.push(i + 1);
-                else answer.push(j + 1);
-            }
-        }
-    }
-    //console.log(answer)
-    return answer;
-    */
-    
-    //left += 1;
-    //right += 1;
-    //let repeat = leftRemain;
     let row = [];
     for (let i = leftQuo; i <= rightQuo; i++) {
         for (let x = 0; x < n; x++) {
@@ -55,7 +25,20 @@ function solution(n, left, right) {
             row = [];
         }
     }
-    //console.log(answer);
     return answer;
 }
 // start: 16:18 ~ end: 17:56
+
+/*
+Math.max()를 활용해서 몫과 나머지 활용이 잘 된 예시
+
+function solution(n, left, right) {
+    var answer = [];
+
+    for (let i = left; i <= right; i++) {
+        answer.push(Math.max(i % n, parseInt(i / n)) + 1)
+    }
+
+    return answer;
+}
+*/
