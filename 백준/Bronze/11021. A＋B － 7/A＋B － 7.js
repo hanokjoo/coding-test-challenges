@@ -1,0 +1,12 @@
+const [_, ...input] = require("fs")
+    .readFileSync(process.platform === "linux" ? "dev/stdin" : "input.txt")
+    .toString()
+    .trim()
+    .split("\n");
+
+let answer = [];
+input.forEach((e, i) => {
+    const [a, b] = e.split(" ").map(Number);
+    answer.push("Case #" + (i + 1) + ": " + (a + b));
+});
+console.log(answer.join("\n"));
