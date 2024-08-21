@@ -4,4 +4,4 @@ const input = require("fs")
     .trim()
     .split("\n");
 
-console.log(input[0].trim()[parseInt(input[1].trim()) - 1]);
+console.log(input[0][parseInt(input[1]) - 1]);
