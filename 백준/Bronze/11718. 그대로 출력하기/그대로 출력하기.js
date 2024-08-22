@@ -1,9 +1,5 @@
 const input = require("fs")
     .readFileSync(process.platform === "linux" ? "dev/stdin" : "input.txt")
-    .toString()
-    .trim()
-    .split("\n");
+    .toString();
 
-for (let row of input) {
-    console.log(row);
-}
+console.log(input);
