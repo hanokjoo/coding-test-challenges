@@ -14,7 +14,7 @@ if (input % 5 === 0 && input % 3 === 0) {
 
 let dividedFive = parseInt(input / 5);
 
-for (let i = 0; i <= dividedFive; i++) {   
+for (let i = dividedFive; i >= 0; i--) {   
     const remainedWithoutFives = input - 5 * i;
     if (remainedWithoutFives % 3 === 0) {
         arrCount.push(i + remainedWithoutFives / 3);
